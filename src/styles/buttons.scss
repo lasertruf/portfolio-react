@@ -1,0 +1,17 @@
+@import "./colors.scss";
+
+@mixin btn-base{
+    border-color: $primary;
+    border: 2px solid $primary;
+    color: $primary;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+.btn-pri{
+    @include btn-base();
+}   
