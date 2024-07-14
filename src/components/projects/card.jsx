@@ -35,7 +35,6 @@ const Card = ({ title, description, imageUrl, link }) => {
           });
         });
       
-
   return (
     <div className="card">
       <div className="card-image-area">
