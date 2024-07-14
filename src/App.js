@@ -6,16 +6,23 @@ import 'react-social-icons/linkedin'
 import 'react-social-icons/github'
 
 import photo from "./assets/jayant-insta.png"
+import MeteorContainer from "./components/meteors/meteorContainer";
 
 function App() {
   return (
     <div className="m-8">
-      <div className="h-12"></div>
+      <div className=" w-full">
+      <div className="w-full overflow-hidden">
+
+      <MeteorContainer />
+      </div>
+      </div>
+      
       <div className="flex w-auto items-start">
 
         <div className="flex-1 text-3xl  text-gray-300 p-6 px-12 pt-24">
           I'm{" "}
-          <span className="text-3xl font-bold" style={{ color: "#ffc86b" }}>
+          <span className="text-3xl font-bold text-primary">
             Jayant Waghmare
 
           </span>

@@ -1,0 +1,30 @@
+.meteor {
+    position: absolute;
+    top: -10px; /* Start slightly above the container */
+    width: 30px;
+    height: 30px;
+    // border-radius: 100px;
+    background: rgb(255, 255, 255);
+    opacity: 0.3;
+    transform: rotate(300deg); /* Angle of the meteor */
+    animation: fall linear infinite; /* Add 'infinite' to loop the animation */
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateX(400px) translateY(300px) rotate(45deg); /* Adjust the Y value for the falling distance */
+      opacity: 0;
+    }
+  }
+
+  
+  .meteor-container {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    overflow: hidden;
+    width: 100% !important;
+    height: 500px; /* Meteors fall from the top 300px */
+    pointer-events: none; /* Prevents the meteors from blocking interactions */
+  }
+  

@@ -1,67 +1,99 @@
 import React from 'react';
 import "./projects.scss"
-
+import TechStackComponent from '../techstack,jsx/techStack';
+import AboutMe from '../aboutMe/aboutMe';
+import Card from './card';
+import dune from "../../assets/dune.png"
+import duneP from "../../assets/dune-p.png"
+import baatcheet from "../../assets/baatcheet.png"
+import baatcheetP from "../../assets/baatcheetP.png"
+import tps from "../../assets/tps.png"
+import tpsP from "../../assets/tps-p.png"
 function ProjectsComponent() {
+
+  const projects =  [
+    {
+      id:'duneApp',
+      title: 'Dune Wiki',
+      description: 'A Dune Wiki PWA (progressive web app) based on the book and movie franchise. Made using React, Tailwind CSS. Hosted on Vercel and GitHub Pages.',
+      imageUrl: dune,
+      imageUrlP: duneP,
+      link: 'https://lasertruf.github.io/dune/',
+    },
+    {
+      id:'baatcheet',
+      title: 'Baatcheet',
+      description: 'Robust bilingual front end web app for a content management system and a learning management portal for a leading Indian mental health nonprofit. Made using Angular and Bootstrap.',
+      imageUrl: baatcheet,
+      imageUrlP: baatcheetP,
+      link: 'https://baatcheet.sangath.in/login',
+    },
+    {
+      id:'tps',
+      title: 'Rooftop solar calculator',
+      description: 'A responsive rooftop solar calculator for Tata Power Solar. Made using Angular',
+      imageUrl: tps,
+      imageUrlP: tpsP,
+      link: 'https://calculator.tatapowersolar.com/',
+    },
+   
+  ];
+
+
   return (
     <div className="mt-10 w-3/4">
-      <div className="flex  items-center gap-4 text-3xl text-primary font-bold">
+     <AboutMe/>
+
+      <div className="flex mt-5 items-center gap-4 text-3xl text-primary font-bold">
         <div className="h-0.5 bg-primary w-8"> </div>
-        About me
+        <span className='text-primary'>Projects</span>
         <div className="h-0.5 bg-primary flex-auto"> </div>
       </div>
 
-      <div className="text-white text-lg mx-8 p-4">
-        I'm a passionate and dedicated software developer with over 3 years of
-        professional experience. My expertise spans across a variety of modern
-        technologies including Angular, React, Node.js, and Java. I thrive on
-        creating robust and scalable web applications, and I am committed to
-        continuous learning and staying updated with the latest industry trends.
-        My strong problem-solving skills and collaborative mindset enable me to
-        deliver high-quality solutions that meet both user and business needs.
-      </div>
 
-      <div className="flex  items-center gap-4 text-3xl text-primary font-bold">
-        <div className="h-0.5 bg-primary w-8"> </div>
-        Projects
-        <div className="h-0.5 bg-primary flex-auto"> </div>
-      </div>
-
-      <div className="text-white text-lg mx-8 p-4">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore natus
-        ad possimus ex odit eos quidem commodi obcaecati ut. Maxime temporibus
-        neque expedita delectus maiores cumque nulla deserunt inventore
-        dignissimos!
-      </div>
-
-      <div className="flex  items-center gap-4 text-3xl text-primary font-bold">
-        <div className="h-0.5 bg-primary w-8"> </div>
-        Tech stack
-        <div className="h-0.5 bg-primary flex-auto"> </div>
-      </div>
-
-      <div className="flex justify-start items-star mx-4">
-        <div className="progress-bar-container">
-          <div className="progress-bar" data-label="Angular">
-            <div className="progress-bar-inner" style={{width:"95%"}}></div>
-            <div className="progress-bar-label">Angular</div>
-          </div>
-
-          <div className="progress-bar" data-label="Angular">
-            <div className="progress-bar-inner" style={{width:"90%"}}></div>
-            <div className="progress-bar-label">React</div>
-          </div>
-
-          <div className="progress-bar" data-label="Angular">
-            <div className="progress-bar-inner" style={{width:"85%"}}></div>
-            <div className="progress-bar-label">Node JS</div>
-          </div>
-
-          <div className="progress-bar" data-label="Angular">
-            <div className="progress-bar-inner" style={{width:"80%"}}></div>
-            <div className="progress-bar-label">JAVA</div>
-          </div>
+      {/* <div>
+          <div className="gallery">
+          {projects?.map((project, index) => (
+            <Card key={index} {...project} />
+          ))}
         </div>
+      </div> */}
+      
+
+{
+  projects.map(el=>
+    <div key={el.id} className='ml-12'>
+    <div className='mt-6 flex gap-2 justify-start items-center'>
+      <a  id={el.id} href={el.link} 
+        target="_blank" rel="noopener noreferrer" 
+        className="text-xl bold text-white">{el.title} </a> 
+     
+     
+       
+    </div>
+    <div className=' text-base text-white mt-2 w-4/4 '>{el.description}</div>
+
+    <div onClick={()=>{document.getElementById(`${el.id}`).click()}}
+     className='w-full h-auto justify-center items-stretch flex gap-4 mt-6 mb-10'>
+      <div className='w-3/4 overflow-clip flex bg-white rounded-md p-2'>
+        <img 
+         className='rounded-md object-fill overflow-hidden cursor-pointer' 
+          src={el.imageUrl} alt="" srcset="" />
       </div>
+      
+      <div onClick={()=>{document.getElementById('duneApp').click()}} className='w-1/4 flex justify-center items-stretch bg-white rounded-md p-2'>
+        <img className='rounded-md cursor-pointer  object-contain ' src={el.imageUrlP} alt="" srcset="" />
+
+      </div>
+    </div>
+ </div>
+  )
+}
+    
+
+   
+
+      <TechStackComponent/>
     </div>
   );
 }
