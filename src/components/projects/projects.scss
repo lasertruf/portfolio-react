@@ -85,7 +85,13 @@
 }
 
 
-
+.carousel-image {
+    max-height: 500px; /* Adjust this value as needed */
+    object-fit: contain; /* Ensures the image fits within the container */
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
 
 
 // Media 

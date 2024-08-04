@@ -7,14 +7,14 @@ function AboutMe() {
         <div className="h-0.5 bg-primary flex-auto"> </div>
       </div>
 
-      <div className="text-white text-lg mx-8 p-4 ">
+      <div className="text-gray-300 text-base mx-8 p-4 ">
         I'm a passionate and dedicated software developer with over{" "}
-        <span className="text-black bg-white" style={{ padding: "0 4px" }}>
+        <span className="text-black bg-gray-300" style={{ padding: "0 4px" }}>
           3 years
         </span>{" "}
         of professional experience. My expertise spans across a variety of
         modern technologies including{" "}
-        <span className="text-black bg-white" style={{ padding: "0 4px" }}>
+        <span className="text-black bg-gray-300" style={{ padding: "0 4px" }}>
           {" "}
           Angular, React, Node.js, and Java
         </span>
